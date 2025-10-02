@@ -12,7 +12,7 @@
 *A cross-platform slot machine game with rich emoji graphics and smooth 60 FPS animations*
 
 [Features](#features) • [Installation](#installation) • [How to Play](#how-to-play) • [Troubleshooting](#troubleshooting) •
-[Win Lines](WIN-LINES.md)
+[Win Lines](WIN_LINES.md)
 
 </div>
 
@@ -108,7 +108,7 @@ Wins require **3+ matching symbols** in a row from left to right:
 *Win amount = Base value × Bet per line × Number of matches*
 
 ### 📈 Win Lines
-Direct documentation how to [Win Lines](WIN-LINES.md).
+Direct documentation how to [Win Lines](WIN_LINES.md).
 
 Play up to **9 different win lines**:
 1. Middle row (horizontal)
