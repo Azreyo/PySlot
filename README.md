@@ -1,209 +1,177 @@
-# PySlot - Slot Machine Game
+<div align="center">
 
-A cross-platform slot machine game built with Python and Pygame, featuring rich emoji graphics and smooth animations.
+# 🎰 PySlot
 
-## Features
+### A Modern Slot Machine Game
 
-- **Modern Graphics**: Smooth 60 FPS gameplay with polished UI elements
-- **Six Unique Symbols**: Cherry (🍒), Lemon (🍋), Melon (🍉), Star (⭐), Diamond (💎), and Lucky Seven (7️⃣)
-- **Multiplier System**: Risk your winnings for a chance to double them
-- **Interactive UI**: Responsive buttons with hover effects and visual feedback
-- **Cross-Platform**: Full support for Windows, Linux, and macOS
-- **Emoji Support**: Native emoji rendering with fallback font handling
+[![Python](https://img.shields.io/badge/Python-3.6+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Pygame](https://img.shields.io/badge/Pygame-2.0+-00A400?style=for-the-badge&logo=pygame&logoColor=white)](https://www.pygame.org/)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
+[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey?style=for-the-badge)](https://github.com)
 
-## Requirements
+*A cross-platform slot machine game with rich emoji graphics and smooth 60 FPS animations*
 
-- Python 3.6 or higher
-- Pygame library
+[Features](#features) • [Installation](#installation) • [How to Play](#how-to-play) • [Troubleshooting](#troubleshooting) •
+[Win Lines](WIN-LINES.md)
 
-## Installation
-
-### Windows
-
-1. **Install Python**:
-   ```bash
-   # Download from python.org or use Windows Package Manager
-   winget install Python.Python.3.12
-   ```
-
-2. **Install Pygame**:
-   ```bash
-   pip install pygame
-   ```
-
-3. **Run the game**:
-   ```bash
-   python slotmachine_pygame.py
-   ```
-
-> **Note**: Windows 11 includes excellent emoji support via the Segoe UI Emoji font.
-
-### Linux (Ubuntu/Debian)
-
-1. **Install Python and pip**:
-   ```bash
-   sudo apt update
-   sudo apt install python3 python3-pip
-   ```
-
-2. **Install Pygame**:
-   ```bash
-   pip3 install pygame
-   ```
-
-3. **Install emoji font support**:
-   ```bash
-   sudo apt install fonts-noto-color-emoji
-   fc-cache -f -v
-   ```
-
-4. **Run the game**:
-   ```bash
-   python3 slotmachine_pygame.py
-   ```
-
-### macOS
-
-1. **Install Python** (requires Homebrew):
-   ```bash
-   brew install python3
-   ```
-
-2. **Install Pygame**:
-   ```bash
-   pip3 install pygame
-   ```
-
-3. **Run the game**:
-   ```bash
-   python3 slotmachine_pygame.py
-   ```
-
-## How to Play
-
-### Basic Gameplay
-
-1. You start with **500 coins**
-2. Click **SPIN** to play (costs 10 coins per spin)
-3. Match 3 identical symbols to win
-
-### Payout Table
-
-| Symbol | Name | Standard Win | Jackpot Win |
-|--------|------|--------------|-------------|
-| 🍒 | Cherry | 20 coins | - |
-| 🍋 | Lemon | 40 coins | - |
-| 🍉 | Melon | 60 coins | - |
-| ⭐ | Star | 80 coins | - |
-| 💎 | Diamond | 120 coins | - |
-| 7️⃣ | Seven | 200 coins | 400 coins |
-
-### Multiplier Round
-
-After a winning spin, you can:
-- **Try Multiplier**: Risk your winnings for a chance to double them
-- **Take Winnings**: Secure your coins and return to the main game
-
-During the multiplier round:
-- Match 2 symbols to double your winnings and continue
-- Fail to match and lose all pending winnings
-
-## Technical Comparison
-
-### Tkinter vs Pygame Implementation
-
-| Feature | Tkinter Version | Pygame Version |
-|---------|----------------|----------------|
-| **Windows Emoji Support** | Inconsistent | Excellent |
-| **Linux Emoji Support** | Poor | Good |
-| **Animation Quality** | Basic | Smooth (60 FPS) |
-| **Graphics Rendering** | Simple | Modern |
-| **Performance** | Moderate | Excellent |
-| **File** | `slotmachine.py` | `slotmachine_pygame.py` |
-
-### Why Pygame is Recommended
-
-**Tkinter Limitations**:
-- Relies on older Tk rendering engine
-- Limited Unicode and emoji font support on Linux
-- Restricted custom font file loading capabilities
-
-**Pygame Advantages**:
-- Utilizes SDL_ttf for modern font rendering
-- Direct access to system-level emoji fonts
-- Superior cross-platform compatibility
-- Enhanced graphics performance and smoother animations
-
-## Troubleshooting
-
-### Emojis Display as Boxes
-
-**Windows**:
-Ensure you're running Windows 10 version 1803 or later, or Windows 11:
-```bash
-winver
-```
-
-**Linux**:
-Install emoji font packages:
-```bash
-sudo apt install fonts-noto-color-emoji fonts-symbola
-fc-cache -fv
-```
-
-### Module Import Error
-
-If you encounter `ModuleNotFoundError: No module named 'pygame'`:
-```bash
-# Windows
-pip install pygame
-
-# Linux/macOS
-pip3 install pygame
-```
-
-### Game Window Not Appearing
-
-- Verify Pygame installation:
-  ```bash
-  python -c "import pygame; print(pygame.version.ver)"
-  ```
-- Ensure you have a display environment (not running over SSH without X11 forwarding)
-- Check for error messages in the console output
-
-## Project Structure
-
-```
-PySlot/
-├── slotmachine_pygame.py    # Pygame version (recommended)
-├── slotmachine.py           # Tkinter version (legacy)
-├── slotmachine.py.bak       # Backup of original implementation
-└── README.md                # Documentation
-```
-
-## Implementation Notes
-
-### Font Rendering
-
-The game automatically detects your operating system and loads the appropriate emoji font:
-- **Windows**: Segoe UI Emoji (native support)
-- **Linux**: Noto Color Emoji (requires installation)
-- **macOS**: Apple Color Emoji (native support)
-
-Font loading messages are displayed in the console for debugging purposes.
-
-### Performance
-
-The Pygame version runs at a locked 60 FPS, providing smooth animations and responsive user input handling.
-
-## License
-
-This project is free to use and modify for personal and commercial purposes.
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit issues or pull requests.
+</div>
 
 ---
 
-**PySlot** - A modern slot machine game experience built with Python.
+## ✨ Features
+
+- � **5-Reel, 4-Row** professional slot machine layout
+- 📊 **9 Win Lines** with animated line indicators
+- 💰 **Line-based multipliers** - bet on 1-9 lines
+- 🎨 **Fullscreen mode** with smooth 60 FPS animations
+- 🌈 **Animated win lines** with color-coded payouts
+- � **Six unique symbols** with progressive reel stops
+- ⚡ **Sequential reel animation** - reels stop one by one
+- 🖱️ **Interactive controls** - adjust lines and bet amounts
+- 🌐 **Cross-platform** support (Windows, Linux, macOS)
+- � **Native emoji rendering** with automatic font detection
+
+## 🚀 Quick Start
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/Azreyo/PySlot.git
+cd PySlot
+
+# Install dependencies
+pip install pygame
+
+# On Linux, install emoji fonts (recommended)
+sudo apt install fonts-noto-color-emoji fonts-symbola
+
+# Run the game (fullscreen)
+python3 slotmachine.py
+```
+
+> 💡 **Pro Tip**: Start with 1-2 lines and low bets to learn the game!
+
+<details>
+<summary><b>Platform-Specific Instructions</b></summary>
+
+### Windows
+```bash
+pip install pygame
+python slotmachine.py
+```
+
+### Linux (Ubuntu/Debian)
+```bash
+# Install dependencies
+sudo apt update
+sudo apt install python3-pip fonts-noto fonts-dejavu
+pip3 install pygame
+
+# Run
+python3 slotmachine.py
+```
+
+> **Note**: Pygame doesn't support color emoji fonts. The game uses Noto Sans or DejaVu Sans which provide basic emoji rendering on Linux.
+
+### macOS
+```bash
+brew install python3
+pip3 install pygame
+python3 slotmachine.py
+```
+
+</details>
+
+## 🎮 How to Play
+
+### Basic Controls
+
+- **+ / - Buttons**: Adjust bet per line (1-10 coins) and active lines (1-9)
+- **SPIN Button** or **SPACE**: Start the spin
+- **X Button** or **ESC**: Exit fullscreen mode
+- **Total Bet**: Bet per line × Number of lines
+
+### 💎 Payout Table
+
+Wins require **3+ matching symbols** in a row from left to right:
+
+| Symbol | Base Value | 3 Match | 4 Match | 5 Match |
+|:------:|:----------:|:-------:|:-------:|:-------:|
+| 🍒 Cherry | 5 | 15 | 20 | 25 |
+| 🍋 Lemon | 10 | 30 | 40 | 50 |
+| 🍉 Melon | 15 | 45 | 60 | 75 |
+| ⭐ Star | 25 | 75 | 100 | 125 |
+| 💎 Diamond | 50 | 150 | 200 | 250 |
+| 7️⃣ Seven | 100 | 300 | 400 | **500** |
+
+*Win amount = Base value × Bet per line × Number of matches*
+
+### 📈 Win Lines
+Direct documentation how to [Win Lines](WIN-LINES.md).
+
+Play up to **9 different win lines**:
+1. Middle row (horizontal)
+2. Top row (horizontal)
+3. Bottom row (horizontal)
+4. V-shape
+5. Inverted V-shape
+6. Diagonal down stairs
+7. Diagonal up stairs
+8. Zig-zag pattern
+9. Zag-zig pattern
+
+Win lines are **color-coded** and **animated** when you win!
+
+
+
+## 🔧 Troubleshooting
+
+<details>
+<summary><b>Emojis show as rectangles/boxes on Linux</b></summary>
+
+**Why**: Pygame doesn't support color emoji fonts (like Noto Color Emoji). It needs regular fonts with emoji glyph support.
+
+**Solution**: Install compatible fonts
+```bash
+sudo apt install fonts-noto fonts-dejavu fonts-symbola
+fc-cache -fv
+```
+
+The game will automatically detect and use the best available font. Check the console output when starting the game to see which font was loaded.
+</details>
+
+<details>
+<summary><b>ModuleNotFoundError: pygame</b></summary>
+
+```bash
+pip install pygame
+```
+</details>
+
+<details>
+<summary><b>Game window doesn't appear</b></summary>
+
+Verify installation:
+```bash
+python -c "import pygame; print(pygame.version.ver)"
+```
+</details>
+
+## 📄 License
+
+MIT License - feel free to use and modify!
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+---
+
+<div align="center">
+
+**Made with ❤️ using Python & Pygame**
+
+⭐ Star this repo if you like it!
+
+</div>
