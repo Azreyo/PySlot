@@ -96,7 +96,7 @@ class Button:
 class SlotMachineGame:
     def __init__(self):
         self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), pygame.FULLSCREEN)
-        pygame.display.set_caption("🎰 PySlot - Professional Slot Machine")
+        pygame.display.set_caption("PySlot - Professional Slot Machine")
         self.clock = pygame.time.Clock()
         
         # Load fonts
@@ -113,8 +113,7 @@ class SlotMachineGame:
         self.total_bet = 0
         
         # Slot state - 5 reels x 4 rows
-        self.reels = [[random.choice(symbols) for _ in range(ROWS)] for _ in range(REELS)]
-        self.display_reels = [[random.choice(symbols) for _ in range(ROWS + 6)] for _ in range(REELS)]
+        self.reels = [[random.choice(symbols) for _ in range(ROWS + 6)] for _ in range(REELS)]
         
         # Animation state
         self.spinning = False
@@ -169,7 +168,7 @@ class SlotMachineGame:
         exit_size = int(SCREEN_HEIGHT * 0.06)
         self.exit_button = Button(
             SCREEN_WIDTH - exit_size - 20, 20,
-            exit_size, exit_size, "✕", RED, WHITE, int(SCREEN_HEIGHT * 0.045)
+            exit_size, exit_size, "x", RED, WHITE, int(SCREEN_HEIGHT * 0.045)
         )
         
         self.running = True
@@ -299,8 +298,8 @@ class SlotMachineGame:
                 # Cycle symbols
                 if self.reel_offset[i] >= self.symbol_height:
                     self.reel_offset[i] = 0
-                    self.display_reels[i].pop(0)
-                    self.display_reels[i].append(random.choices(symbols, weights=symbol_weights, k=1)[0])
+                    self.reels[i].pop(0)
+                    self.reels[i].append(random.choices(symbols, weights=symbol_weights, k=1)[0])
                 
                 # Check if should stop
                 if self.spin_time >= self.reel_stop_time[i]:
@@ -311,7 +310,7 @@ class SlotMachineGame:
                         self.reel_offset[i] = 0
                         # Set final symbols
                         for row in range(ROWS):
-                            self.display_reels[i][row] = self.reels[i][row]
+                            self.reels[i][row] = self.reels[i][row]
         
         if all_stopped:
             self.spinning = False
@@ -390,9 +389,9 @@ class SlotMachineGame:
             pygame.draw.line(self.screen, (color_val, color_val + 5, color_val + 10), (0, y), (SCREEN_WIDTH, y))
         
         # Title
-        title = self.title_font.render("🎰 PYSLOT CASINO 🎰", True, GOLD)
+        title = self.title_font.render("PYSLOT CASINO ", True, GOLD)
         title_rect = title.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT * 0.05))
-        title_shadow = self.title_font.render("🎰 PYSLOT CASINO 🎰", True, BLACK)
+        title_shadow = self.title_font.render("PYSLOT CASINO ", True, BLACK)
         self.screen.blit(title_shadow, (title_rect.x + 3, title_rect.y + 3))
         self.screen.blit(title, title_rect)
         
@@ -400,7 +399,7 @@ class SlotMachineGame:
         coins_bg = pygame.Rect(SCREEN_WIDTH * 0.05, SCREEN_HEIGHT * 0.03, SCREEN_WIDTH * 0.15, SCREEN_HEIGHT * 0.05)
         pygame.draw.rect(self.screen, BLACK, coins_bg, border_radius=10)
         pygame.draw.rect(self.screen, GOLD, coins_bg, 3, border_radius=10)
-        coins_text = self.text_font.render(f"💰 {self.coins}", True, GOLD)
+        coins_text = self.text_font.render(f"$  {self.coins}", True, GOLD)
         coins_rect = coins_text.get_rect(center=coins_bg.center)
         self.screen.blit(coins_text, coins_rect)
         
@@ -481,7 +480,7 @@ class SlotMachineGame:
                 symbol_y = y + row * self.symbol_height - self.reel_offset[reel_idx]
                 
                 if self.reel_spinning[reel_idx]:
-                    symbol = self.display_reels[reel_idx][row % len(self.display_reels[reel_idx])]
+                    symbol = self.reels[reel_idx][row % len(self.reels[reel_idx])]
                 else:
                     if row < ROWS:
                         symbol = self.reels[reel_idx][row]
@@ -534,7 +533,7 @@ class SlotMachineGame:
     
     def run(self):
         print("=" * 60)
-        print("🎰 PySlot - Professional Casino Slot Machine")
+        print("PySlot - Professional Casino Slot Machine")
         print("=" * 60)
         print("✓ Game started in fullscreen mode")
         print("=" * 60)
