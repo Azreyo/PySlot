@@ -1,4 +1,4 @@
-<div align="center">## ✨ Features
+<div align="center">
 
 ### A Modern Slot Machine Game
 
