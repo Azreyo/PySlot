@@ -1,6 +1,4 @@
-<div align="center">
-
-# 🎰 PySlot
+<div align="center">## ✨ Features
 
 ### A Modern Slot Machine Game
 
@@ -12,7 +10,13 @@
 *A cross-platform slot machine game with rich emoji graphics and smooth 60 FPS animations*
 
 [Features](#features) • [Installation](#installation) • [How to Play](#how-to-play) • [Troubleshooting](#troubleshooting) •
-[Win Lines](WIN_LINES.md)
+
+### Platform Support
+ 🌐 **Cross-platform** support (Windows, Linux, macOS)
+
+🔤 **Native emoji rendering** with automatic font detection
+
+🖱️ **Interactive controls** - keyboard and mouse supportlot
 
 </div>
 
@@ -41,7 +45,7 @@ git clone https://github.com/Azreyo/PySlot.git
 cd PySlot
 
 # Install dependencies
-pip install pygame
+pip install pygame numpy
 
 # On Linux, install emoji fonts (recommended)
 sudo apt install fonts-noto-color-emoji fonts-symbola
@@ -50,7 +54,11 @@ sudo apt install fonts-noto-color-emoji fonts-symbola
 python3 slotmachine.py
 ```
 
-> 💡 **Pro Tip**: Start with 1-2 lines and low bets to learn the game!
+> 💡 **Pro Tips**: 
+> - Start with 1-2 lines and low bets to learn the game!
+> - Build win streaks for multiplier bonuses
+> - Use the ► arrow to access spacious bet configuration
+> - Look for scatter symbols (🌟) to trigger free spins!
 
 <details>
 <summary><b>Platform-Specific Instructions</b></summary>
@@ -87,42 +95,86 @@ python3 slotmachine.py
 
 ### Basic Controls
 
-- **+ / - Buttons**: Adjust bet per line (1-10 coins) and active lines (1-9)
 - **SPIN Button** or **SPACE**: Start the spin
-- **X Button** or **ESC**: Exit fullscreen mode
+- **► Arrow Button** (left side): Open bet configuration screen
+- **Lines +/- Buttons**: Adjust active lines (1-9)
+- **X Button** or **ESC**: Exit game or return from bet config
 - **Total Bet**: Bet per line × Number of lines
+
+### 💳 Bet Configuration Screen
+
+Click the **► arrow button** on the left side to access the spacious bet configuration screen:
+
+- **Basic Controls**: Fine-tune bet with +/- buttons (1-100 coins)
+- **Quick Controls**: 
+  - **MIN**: Set to minimum bet (1 coin)
+  - **÷2**: Halve current bet
+  - **×2**: Double current bet
+  - **MAX**: Set to maximum bet (100 coins)
+- **Preset Buttons**: Instantly set bet to 1, 5, 10, 25, 50, or 100 coins
+- **◄ BACK**: Return to main game with smooth animation
+
+### 🔥 Multiplier System
+
+Build win streaks to increase your multiplier:
+- **3 wins in a row**: 2x multiplier
+- **5 wins in a row**: 3x multiplier
+- **7 wins in a row**: 5x multiplier
+- **10+ wins in a row**: 10x multiplier! 🚀
+
+*Lose a spin and your streak resets*
+
+### 🎁 Free Spins Bonus
+
+Land **3 or more scatter symbols (🌟)** anywhere on the reels to trigger free spins:
+- **3 scatters**: 5 free spins
+- **4 scatters**: 8 free spins
+- **5 scatters**: 11 free spins
+
+During free spins, you don't pay for spins but can still win big!
 
 ### 💎 Payout Table
 
-Wins require **3+ matching symbols** in a row from left to right:
+Wins require **3+ matching symbols** in a row from left to right on active paylines:
 
-| Symbol | Base Value | 3 Match | 4 Match | 5 Match |
-|:------:|:----------:|:-------:|:-------:|:-------:|
-| 🍒 Cherry | 5 | 15 | 20 | 25 |
-| 🍋 Lemon | 10 | 30 | 40 | 50 |
-| 🍉 Melon | 15 | 45 | 60 | 75 |
-| ⭐ Star | 25 | 75 | 100 | 125 |
-| 💎 Diamond | 50 | 150 | 200 | 250 |
-| 7️⃣ Seven | 100 | 300 | 400 | **500** |
+| Symbol | Name | Base Value | 3 Match | 4 Match | 5 Match |
+|:------:|:----:|:----------:|:-------:|:-------:|:-------:|
+| 🍒 | Cherry | 5 | 15 | 20 | 25 |
+| 🍋 | Lemon | 10 | 30 | 40 | 50 |
+| � | Orange | 12 | 36 | 48 | 60 |
+| 🍇 | Grapes | 15 | 45 | 60 | 75 |
+| �🍉 | Watermelon | 18 | 54 | 72 | 90 |
+| 🔔 | Bell | 20 | 60 | 80 | 100 |
+| ⭐ | Star | 25 | 75 | 100 | 125 |
+| 💰 | Money Bag | 30 | 90 | 120 | 150 |
+| 👑 | Crown | 40 | 120 | 160 | 200 |
+| 💎 | Diamond | 50 | 150 | 200 | 250 |
+| 🎰 | Slot Machine | 75 | 225 | 300 | 375 |
+| 7️⃣ | Lucky Seven | 100 | 300 | 400 | **500** |
 
-*Win amount = Base value × Bet per line × Number of matches*
+**Special Symbol:**
+- 🌟 **Scatter**: Triggers free spins (3+ anywhere on reels)
+
+*Win amount = Base value × Bet per line × Multiplier*
 
 ### 📈 Win Lines
-Direct documentation how to [Win Lines](WIN_LINES.md).
 
-Play up to **9 different win lines**:
-1. Middle row (horizontal)
-2. Top row (horizontal)
-3. Bottom row (horizontal)
-4. V-shape
-5. Inverted V-shape
-6. Diagonal down stairs
-7. Diagonal up stairs
-8. Zig-zag pattern
-9. Zag-zig pattern
+Play up to **9 different win lines** with rainbow-colored animations:
 
-Win lines are **color-coded** and **animated** when you win!
+1. **Middle Row** - Straight across the center
+2. **Top Row** - Straight across the top
+3. **Bottom Row** - Straight across the bottom
+4. **V-Shape** - Down from top corners, up at center
+5. **Inverted V** - Up from bottom corners, down at center
+6. **Diagonal Stairs Down** - Descending from top-left to bottom-right
+7. **Diagonal Stairs Up** - Ascending from bottom-left to top-right
+8. **Zig-Zag** - Alternating up and down pattern
+9. **Zag-Zig** - Alternating down and up pattern
 
+Win lines feature:
+- 🌈 **Rainbow colors** - Each line has unique vibrant colors
+- ✨ **Pulsing animations** - Winning lines glow and pulse
+- 🎆 **Particle effects** - Celebration particles along win lines
 
 
 ## 🔧 Troubleshooting
